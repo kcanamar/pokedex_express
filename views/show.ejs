@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head.ejs') %>
-<body>
+<body class="show">
     <div class="show-right">
         <h1 class="show-title"><%= pokemon.name %></h1>
+        <img src="<%= pokemon.img %>" alt="">
         <a href="/" class="show-goBackBtn"><button>Go Back</button></a>
+    </div>
+    <div class="show-center">
+        <h4 class="show-misc">Information</h4>
+            <ul>
+                <li class="misc-stat">PokéMon Id#: <%= pokemon.id %> </li>
+                <li class="misc-stat">Types: <%= pokemon.type %> </li>
+                <li class="misc-stat">Classifications: <%= pokemon.misc.classification %> </li>
+                <li class="misc-stat">Height: <%= pokemon.misc.height %> </li>
+                <li class="misc-stat">Weight: <%= pokemon.misc.weight %> </li>
+                <li class="misc-stat">Normal Abilities: <%= pokemon.misc.abilities.normal %></li>
+                <li class="misc-stat">Hidden Abilities: <%= pokemon.misc.abilities.hidden%></li>
+            </ul>
+    </div>
+    <div class="show-left">
+        
     </div>
 </body>
 </html>
