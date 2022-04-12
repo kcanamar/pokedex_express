@@ -1,3 +1,26 @@
 body {
+    align-items: center;
     background-color: red;
+}
+.index-title {
+    text-align: center;
+}
+.index-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.index-pokemon {
+    display:flex;
+    margin: .5em;
+    flex-direction: column;
+    justify-content: center;
+    border-style:solid;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+}
+.index-pokemon .index-image {
+    width: 5em;
+    border-radius: 15px;
+    padding: 5px 0px 0px 0px;
 }
