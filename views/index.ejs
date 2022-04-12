@@ -6,8 +6,8 @@
     <div class="index-container">
         <% pokedex.forEach((pokemon, index) => { %> 
             <div class="index-pokemon">
-                <a href=""> <%= pokemon.name %></a>
-                <a href=""> <img class="index-image" style="height:5em" src="<%= pokemon.img %>" alt=""> </a>
+                <a href="/<%=index%>"> <%= pokemon.name %></a>
+                <a href="/<%=index%>"> <img class="index-image" style="height:5em" src="<%= pokemon.img %>" alt=""> </a>
             </div>
         <% }) %>
     </div>

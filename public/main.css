@@ -11,6 +11,7 @@ body {
 }
 .index-pokemon {
     display:flex;
+    background-color: white;
     margin: .5em;
     flex-direction: column;
     justify-content: center;
