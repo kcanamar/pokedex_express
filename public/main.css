@@ -5,6 +5,10 @@ body {
 }
 .index-title {
     text-align: center;
+    font-size: 70px;
+    color: yellow;
+    text-shadow: -3px 0 blue, 0 3px blue, 3px 0 blue, 0 -3px blue;
+    letter-spacing: 1px;
 }
 .index-container {
     display: flex;
@@ -20,6 +24,12 @@ body {
     border-radius: 15px;
     text-align: center;
     padding: 10px;
+}
+.index-pokemon a {
+    text-decoration: none;
+    color: blue;
+    font-size: 16px;
+    letter-spacing: .5px;
 }
 .index-pokemon .index-image {
     width: 5em;
