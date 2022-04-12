@@ -27,6 +27,11 @@ app.get("/", (req, res) => {
 app.get("/new", (req, res) => {
     res.render("new.ejs")
 })
+// Create Route
+app.post("/", (req, res) => {
+    pokedex.push(req.body)
+    res.redirect("/")
+})
 // Show Route
 app.get("/:id", (req, res) => {
     const pokemon = pokedex[parseInt(req.params.id)]
