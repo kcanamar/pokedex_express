@@ -11,7 +11,10 @@ dotenv.config()
 //////////////////////
 // Declare Middleware
 //////////////////////
-
+app.use(methodOverride('_method')) 
+app.use('/public', express.static('public'))
+app.use(express.urlencoded({extended: false}))
+app.use(morgan('tiny'))
 ///////////////////////
 // Declare Routes and Routers 
 ///////////////////////
