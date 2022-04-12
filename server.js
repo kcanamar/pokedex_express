@@ -22,3 +22,6 @@ app.use(morgan('tiny'))
 ///////////////////////////
 // Server Listener
 ///////////////////////////
+app.listen(PORT, () => {
+    console.log(`Kanto Radio channel ${PORT}`)
+})
