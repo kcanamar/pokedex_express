@@ -23,7 +23,10 @@ app.use(morgan('tiny'))
 app.get("/", (req, res) => {
     res.render('index.ejs', {pokedex: pokedex})
 })
-
+// New Route 
+app.get("/new", (req, res) => {
+    res.render("new.ejs")
+})
 // Show Route
 app.get("/:id", (req, res) => {
     const pokemon = pokedex[parseInt(req.params.id)]

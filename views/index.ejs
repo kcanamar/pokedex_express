@@ -3,6 +3,7 @@
 <%- include('./partials/head.ejs') %>
 <body>
     <h1 class="index-title">PokéDex Main Page</h1>
+    <a href="/new"><button class="new-btn">Create Your Own PokéMon</button></a>
     <div class="index-container">
         <% pokedex.forEach((pokemon, index) => { %> 
             <div class="index-pokemon">
