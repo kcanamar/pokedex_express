@@ -28,10 +28,12 @@ app.get("/new", (req, res) => {
     res.render("new.ejs")
 })
 // Create Route
+// Needs troublshooting as the form is not giving back readable data for my show route to display
 app.post("/", (req, res) => {
-    pokedex.push(req.body)
+    pokedex.unshift(req.body)
     res.redirect("/")
 })
+
 // Show Route
 app.get("/:id", (req, res) => {
     const pokemon = pokedex[parseInt(req.params.id)]
