@@ -10,7 +10,7 @@
                 <a href="/<%=index%>"> <%= pokemon.name %></a>
                 <a href="/<%=index%>"> <img class="index-image" style="height:5em" src="<%= pokemon.img %>" alt=""> </a>
                 <form action="/<%= index %>?_method=delete" method="post">
-                    <input type="submit" value="delete">
+                    <input class="delete-btn" type="submit" value="delete">
                 </form>
             </div>
         <% }) %>
