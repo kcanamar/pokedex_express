@@ -33,7 +33,10 @@ app.post("/", (req, res) => {
     pokedex.unshift(req.body)
     res.redirect("/")
 })
-
+app.delete("/:id", (req, res) => {
+    pokedex.splice(req.params.id, 1)
+    res.redirect("/")
+})
 // Show Route
 app.get("/:id", (req, res) => {
     const pokemon = pokedex[parseInt(req.params.id)]
