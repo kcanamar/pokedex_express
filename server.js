@@ -33,6 +33,16 @@ app.post("/", (req, res) => {
     pokedex.unshift(req.body)
     res.redirect("/")
 })
+// Edit Route
+app.get("/edit/:id", (req, res) => {
+    res.send('this is the edit page')
+})
+// Update Route
+// app.put("/:id", (req, res) => {
+//     pokedex[parseInt(req.params.id)] = req.body
+//     res.redirect("/")
+// })
+// Delete Route
 app.delete("/:id", (req, res) => {
     pokedex.splice(req.params.id, 1)
     res.redirect("/")
