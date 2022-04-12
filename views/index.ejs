@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <h1 class="index-title">PokéDex Main Page</h1>
+    <div class="index-container">
+        <% pokedex.forEach((pokemon, index) => { %> 
+            <div class="index-pokemon">
+                <a href=""> <%= pokemon.name %></a>
+                <a href=""> <img class="index-image" style="width:10em" src="<%= pokemon.img %>" alt=""> </a>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
