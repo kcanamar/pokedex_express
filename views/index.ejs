@@ -2,13 +2,15 @@
 <html lang="en">
 <%- include('./partials/head.ejs') %>
 <body>
+    <header class="title-container">
     <h1 class="index-title">PokéDex Main Page</h1>
     <a href="/pokedex/new"><button class="new-btn">Create Your Own PokéMon</button></a>
+    </header>
     <div class="index-container">
         <% pokedex.forEach((pokemon, index) => { %> 
             <div class="index-pokemon">
-                <a href="/pokedex/<%=index%>"> <%= pokemon.name %></a>
-                <a href="/pokedex/<%=index%>"> <img class="index-image" style="height:5em" src="<%= pokemon.img %>" alt=""> </a>
+                <a href="/pokedex/<%=index%>"> <h3 class="index-name"><%= pokemon.name %></h3></a>
+                <a href="/pokedex/<%=index%>"><div class="img-container"> <img class="index-image" src="<%= pokemon.img %>" alt=""> </div></a>
                 <form action="/pokedex/<%= index %>?_method=delete" method="post">
                     <input class="delete-btn" type="submit" value="Delete">
                 </form>

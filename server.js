@@ -29,7 +29,7 @@ app.get("/pokedex/new", (req, res) => {
 })
 // Create Route
 app.post("/pokedex", (req, res) => {
-    // What is a better way to do this? would it be writing a function in the app.js then exporting it here instead of hard coding?
+    // What is a better way to do this?
     req.body.misc = {
         height: req.body.height, 
         weight: req.body.weight
@@ -53,7 +53,6 @@ app.get("/pokedex/edit/:id", (req, res) => {
         index: req.params.id
     })
 })
-
 // Update Route
 app.put("/pokedex/:id", (req, res) => {
     req.body.misc = {
@@ -71,7 +70,6 @@ app.put("/pokedex/:id", (req, res) => {
     pokedex[parseInt(req.params.id)] = req.body
     res.redirect("/pokedex")
 })
-
 // Delete Route
 app.delete("/pokedex/:id", (req, res) => {
     pokedex.splice(req.params.id, 1)
@@ -82,6 +80,7 @@ app.get("/pokedex/:id", (req, res) => {
     const pokemon = pokedex[parseInt(req.params.id)]
     res.render("show.ejs", {pokemon})
 })
+
 ///////////////////////////
 // Server Listener
 ///////////////////////////

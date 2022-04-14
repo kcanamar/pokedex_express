@@ -2,6 +2,11 @@ body {
     display: block;
     text-align: center;
     justify-content: center;
+    background-image: url('/static/pokedex-background.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     background-color: red;
 }
 .index-title {
@@ -20,7 +25,7 @@ body {
 }
 .index-pokemon {
     display:flex;
-    background-color: white;
+    background-color:rgba(255, 255, 255, 0.671);
     width: 110px;
     height: 160px;
     margin: .5em;
@@ -35,8 +40,12 @@ body {
 .index-pokemon a {
     text-decoration: none;
     color: blue;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.745);
     font-size: 16px;
     letter-spacing: .5px;
+}
+.index-pokemon .index-name {
+    margin: 0;
 }
 .index-pokemon .index-image {
     width: 5em;
@@ -71,9 +80,13 @@ body.show .show-right {
     border-radius: 20px;
     border: 4px solid black;
     padding: 1em;
-    background-color: white;
+    background-image: url('/static/stats-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     justify-content: center;
     text-align: center;
+    
 }
 .show-right img{
     border-radius: 20px;
@@ -112,3 +125,4 @@ body.show .show-right {
     padding: 0px;
     letter-spacing: 1px;
 }
+
