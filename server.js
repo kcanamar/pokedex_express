@@ -28,26 +28,38 @@ app.get("/pokedex/new", (req, res) => {
     res.render("new.ejs")
 })
 // Create Route
-// Needs troublshooting as the form is not giving back readable data for my show route to display
 app.post("/pokedex", (req, res) => {
-    // minipulate data to reflect ejs show formatting
-    // { misc: {abilities:}}
+    // What is a better way to do this? would it be writing a function in the app.js then exporting it here instead of hard coding?
+    req.body.misc = {
+        height: req.body.height, 
+        weight: req.body.weight
+    }
+    req.body.stats = {
+        hp: req.body.hp,
+        attack: req.body.attack,
+        defense: req.body.defense,
+        spattack: req.body.spattack,
+        spdefense: req.body.spdefense,
+        speed: req.body.speed
+    }
     pokedex.unshift(req.body)
-    res.send(req.body)
+    res.redirect("/pokedex")
 })
 // Edit Route
 app.get("/pokedex/edit/:id", (req, res) => {
     res.render('edit.ejs')
 })
+
 // Update Route
-// app.put("/pokedex/:id", (req, res) => {
-//     pokedex[parseInt(req.params.id)] = req.body
-//     res.redirect("/")
-// })
+app.put("/pokedex/:id", (req, res) => {
+    pokedex[parseInt(req.params.id)] = req.body
+    res.redirect("/")
+})
+
 // Delete Route
 app.delete("/pokedex/:id", (req, res) => {
     pokedex.splice(req.params.id, 1)
-    res.redirect("/")
+    res.redirect("/pokedex")
 })
 // Show Route
 app.get("/pokedex/:id", (req, res) => {
