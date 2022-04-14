@@ -47,13 +47,29 @@ app.post("/pokedex", (req, res) => {
 })
 // Edit Route
 app.get("/pokedex/edit/:id", (req, res) => {
-    res.render('edit.ejs')
+    const pokemon = pokedex[parseInt(req.params.id)]
+    res.render('edit.ejs', {
+        pokemon: pokemon,
+        index: req.params.id
+    })
 })
 
 // Update Route
 app.put("/pokedex/:id", (req, res) => {
+    req.body.misc = {
+        height: req.body.height, 
+        weight: req.body.weight
+    }
+    req.body.stats = {
+        hp: req.body.hp,
+        attack: req.body.attack,
+        defense: req.body.defense,
+        spattack: req.body.spattack,
+        spdefense: req.body.spdefense,
+        speed: req.body.speed
+    }
     pokedex[parseInt(req.params.id)] = req.body
-    res.redirect("/")
+    res.redirect("/pokedex")
 })
 
 // Delete Route
