@@ -10,7 +10,7 @@
         <% pokedex.forEach((pokemon, index) => { %> 
             <div class="index-pokemon">
                 <a href="/pokedex/<%=index%>"> <h3 class="index-name"><%= pokemon.name %></h3></a>
-                <a href="/pokedex/<%=index%>"><div class="img-container"> <img class="index-image" src="<%= pokemon.img %>" alt=""> </div></a>
+                <a href="/pokedex/<%=index%>"> <img style="width:5em" class="index-image" src="<%= pokemon.img %>" alt=""> </a>
                 <form action="/pokedex/<%= index %>?_method=delete" method="post">
                     <input class="delete-btn" type="submit" value="Delete">
                 </form>

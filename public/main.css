@@ -48,7 +48,7 @@ body {
     margin: 0;
 }
 .index-pokemon .index-image {
-    width: 5em;
+    height: 5em;
     border-radius: 15px;
     padding: 5px 0px 0px 0px;
 }
