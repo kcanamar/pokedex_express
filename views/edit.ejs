@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head.ejs') %>
-    <body>
-        <h1 class="new-title">Create Your Own PokéMon</h1>
-        <a href="/pokedex"><button class="show-goBackBtn">Go Back</button></a>
-        <!-- Struggling to understnad why my form once created is not readable by my show page -->
-        <form action="/pokedex/<%=index%>?_method=PUT" method="post">
-            Name <input type="text" name="name" value="<%= pokemon.name %>"> <br>
-            Photo <input type="text" name="img" value="<%= pokemon.img %>"> <br>
-            PokéMon Id# <input type="text" name="id" value="<%= pokemon.id %>"> <br>
-            Types <input type="text" name="type" value="<%= pokemon.type %>"> <br>
-            <!-- pokemon.misc. -->
-            Height <input type="number" name="height" value="<%= pokemon.misc.height %>"> <br>
-            Weight <input type="number" name="weight" value="<%= pokemon.misc.weight %>"> <br>
-            <!-- pokemon.stats. -->
-            Hit Points <input type="number" name="hp" value="<%= pokemon.stats.hp %>"> <br>
-            Attack Power <input type="number" name="attack" value="<%= pokemon.stats.attack %>"> <br>
-            Defense <input type="number" name="defense" value="<%= pokemon.stats.defense %>"> <br>
-            Special Attack <input type="number" name="spattack" value="<%= pokemon.stats.spattack %>"> <br>
-            Special Defense <input type="number" name="spdefense" value="<%= pokemon.stats.spdefense %>"> <br>
-            Speed <input type="number" name="speed" value="<%= pokemon.stats.speed %>"> <br>
-            <input type="submit" value="Update">
-        </form>
+    <body class="edit-page">
+        <h1 class="edit-title">Edit A PokéMon</h1>
+        <a href="/pokedex"><button class="show-goBackBtn edit-goBackBtn">Go Back</button></a>
+        <div id="edit-form" class="edit-form">
+            <form class="edit-inputs" action="/pokedex/<%=index%>?_method=PUT" method="post">
+                Name: <input type="text" name="name" value="<%= pokemon.name %>"> <br>
+                Photo: <input type="text" name="img" value="<%= pokemon.img %>"> <br>
+                PokéMon Id#: <input type="text" name="id" value="<%= pokemon.id %>"> <br>
+                Types: <input type="text" name="type" value="<%= pokemon.type %>"> <br>
+                Height: <input type="text" name="height" value="<%= pokemon.misc.height %>"> <br>
+                Weight: <input type="number" name="weight" value="<%= pokemon.misc.weight %>"> <br>
+                Hit Points: <input type="number" name="hp" value="<%= pokemon.stats.hp %>"> <br>
+                Attack Power: <input type="number" name="attack" value="<%= pokemon.stats.attack %>"> <br>
+                Defense: <input type="number" name="defense" value="<%= pokemon.stats.defense %>"> <br>
+                Special Attack: <input type="number" name="spattack" value="<%= pokemon.stats.spattack %>"> <br>
+                Special Defense: <input type="number" name="spdefense" value="<%= pokemon.stats.spdefense %>"> <br>
+                Speed: <input type="number" name="speed" value="<%= pokemon.stats.speed %>"> <br>
+                <input class="input-btn" type="submit" value="Update">
+            </form>
+        </div>
     </body>
 </html>

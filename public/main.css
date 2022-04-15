@@ -9,7 +9,7 @@ body {
     background-position: center;
     background-color: red;
 }
-.index-title {
+.index-title, .edit-title {
     text-align: center;
     font-size: 70px;
     color: yellow;
@@ -52,7 +52,7 @@ body {
     border-radius: 15px;
     padding: 5px 0px 0px 0px;
 }
-.delete-btn, .edit-btn, .show-left .show-goBackBtn, .new-btn {
+.delete-btn, .edit-btn, .show-goBackBtn, .new-btn, .input-btn, .create-btn {
     font-size: 16px;
     border: none;
     border-radius: 20px;
@@ -70,7 +70,7 @@ div.show {
 div.show-main-title {
     text-align: center;
 }
-div.show-main-title .wtp-title{
+div.show-main-title .wtp-title, .create-title {
     font-size: 70px;
     color: yellow;
     text-shadow: -3px 0 blue, 0 3px blue, 3px 0 blue, 0 -3px blue;
@@ -92,7 +92,7 @@ body.show .show-right {
     border-radius: 20px;
     margin: 1em;
 }
-.show-center {
+.show-center, .edit-form, .create-form {
     margin: 0 0 0px 0;
     padding: 2em;
     border: 4px solid black;
@@ -129,3 +129,26 @@ body.show .show-right {
 /* todo new.ejs styling */
 
 /* todo edit.ejs styling */
+.edit-goBackBtn, .create-goBackBtn {
+    margin-bottom: 10px;
+}
+.edit-page {
+    justify-content: center;
+}
+#edit-form, #create-form{
+    letter-spacing: 1px;
+    background-image: url('/static/stats-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    text-shadow: 1px 0px rgba(255, 255, 255, 0.806);
+}
+#create-form input {
+    width: 22.5em;
+}
+input.input-btn, input.create-btn{
+    margin-top: 15px;
+}
