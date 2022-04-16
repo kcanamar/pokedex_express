@@ -1,6 +1,5 @@
-*A PRD (Product Requirements Document) is created before creating a product or feature and includes the planning required for developers to execute effectively. This document is usually prepared by Product Managers, read more [here](https://www.atlassian.com/agile/product-management/requirements)*
 
-# Product Requirements Documentation
+# PokéDex Made With: Express, Ejs, JavaSript, HTML, CSS
 
 **Summary**
 | Field | Detail |
@@ -33,7 +32,9 @@ List of stories users should experience when using your application.
 
 ## User Interface Mockups
 
-### [Wire Frame Mock Up](./public/Pokedex.png)
+### Wire Frame Mock Up
+
+![Wire Frame Mock Up](./public/Pokedex.png)
 
 ### Screenshots
 ![Index Page](./public/Index-ScreenShot.png)
