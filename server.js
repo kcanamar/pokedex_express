@@ -30,11 +30,16 @@ app.get("/pokedex/new", (req, res) => {
 // Create Route
 app.post("/pokedex", (req, res) => {
     // What is a better way to do this?
-    req.body.misc = {
+    let newPokemon = {
+        name: req.body.name,
+        id: req.body.id,
+        img: req.body.img
+    }
+    newPokemon.misc = {
         height: req.body.height, 
         weight: req.body.weight
     }
-    req.body.stats = {
+    newPokemon.stats = {
         hp: req.body.hp,
         attack: req.body.attack,
         defense: req.body.defense,
@@ -42,7 +47,7 @@ app.post("/pokedex", (req, res) => {
         spdefense: req.body.spdefense,
         speed: req.body.speed
     }
-    pokedex.unshift(req.body)
+    pokedex.unshift(newPokemon)
     res.redirect("/pokedex")
 })
 // Edit Route
@@ -55,11 +60,15 @@ app.get("/pokedex/edit/:id", (req, res) => {
 })
 // Update Route
 app.put("/pokedex/:id", (req, res) => {
-    req.body.misc = {
+    let updatedPokemon = {...pokedex[req.params.id]};
+    updatedPokemon.name = req.body.name;
+    updatedPokemon.id = req.body.id;
+    updatedPokemon.img = req.body.img;
+    updatedPokemon.misc = {
         height: req.body.height, 
         weight: req.body.weight
     }
-    req.body.stats = {
+    updatedPokemon.stats = {
         hp: req.body.hp,
         attack: req.body.attack,
         defense: req.body.defense,
@@ -67,7 +76,8 @@ app.put("/pokedex/:id", (req, res) => {
         spdefense: req.body.spdefense,
         speed: req.body.speed
     }
-    pokedex[parseInt(req.params.id)] = req.body
+    pokedex[req.params.id] = updatedPokemon
+    console.log(pokedex[req.params.id])
     res.redirect("/pokedex")
 })
 // Delete Route
